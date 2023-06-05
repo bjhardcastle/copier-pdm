@@ -35,7 +35,7 @@ def _get_license(pkg_name: str) -> str:
         return "?"
     license_name = cast(dict, data).get("License", "").strip()
     multiple_lines = bool(license_name.count("\n"))
-    {%- if author_username == "pawamoy" %}
+    {%- if author_username == "bjhardcastle" %}
     # TODO: remove author logic once all my packages licenses are fixed
     author = ""
     {%- endif %}
@@ -43,10 +43,10 @@ def _get_license(pkg_name: str) -> str:
         for header, value in cast(dict, data).items():
             if header == "Classifier" and value.startswith("License ::"):
                 license_name = value.rsplit("::", 1)[1].strip()
-            {%- if author_username == "pawamoy" %}
+            {%- if author_username == "bjhardcastle" %}
             elif header == "Author-email":
                 author = value
-    if license_name == "Other/Proprietary License" and "pawamoy" in author:
+    if license_name == "Other/Proprietary License" and "bjhardcastle" in author:
         license_name = "ISC"
     {%- endif %}
     return license_name or "?"
@@ -89,7 +89,7 @@ def _render_credits() -> str:
         "project_name": project_name,
         "prod_dependencies": sorted(prod_dependencies.values(), key=lambda dep: dep["name"]),
         "dev_dependencies": sorted(dev_dependencies.values(), key=lambda dep: dep["name"]),
-        "more_credits": "{% if author_username == "pawamoy" %}http://pawamoy.github.io/credits/{% endif %}",
+        "more_credits": "{% if author_username == "bjhardcastle" %}http://bjhardcastle.github.io/credits/{% endif %}",
     }
     template_text = dedent(
         """{% raw %}
@@ -97,7 +97,7 @@ def _render_credits() -> str:
 
         [`python`](https://www.python.org/) |
         [`pdm`](https://pdm.fming.dev/) |
-        [`copier-pdm`](https://github.com/pawamoy/copier-pdm)
+        [`copier-pdm`](https://github.com/bjhardcastle/copier-pdm)
 
         {% macro dep_line(dep) -%}
         [`{{ dep.name }}`](https://pypi.org/project/{{ dep.name }}/) | {{ dep.summary }} | {{ ("`" ~ dep.spec ~ "`") if dep.spec else "" }} | `{{ dep.version }}` | {{ dep.license }}

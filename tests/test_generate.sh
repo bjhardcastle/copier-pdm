@@ -13,7 +13,7 @@ echo
 generate "${PWD}" "${output}"
 cd "${output}"
 git init .
-git remote add origin https://github.com/pawamoy/pawamoy-testing
+git remote add origin https://github.com/bjhardcastle/testing
 
 echo
 echo "///////////////////////////////////////////"

@@ -16,7 +16,7 @@ Reference the new template in `.copier-answers.yml`:
 
 ```yaml
 _commit: e9e472d
-_src_path: gh:pawamoy/copier-pdm.git
+_src_path: gh:bjhardcastle/copier-pdm.git
 ```
 
 Now clean up your repository, commit the changes,

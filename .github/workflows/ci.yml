@@ -66,8 +66,8 @@ jobs:
 
     - name: Set up git
       run: |
-        git config --global user.email "pawamoy@pm.me"
-        git config --global user.name "Timothée Mazzucotelli"
+        git config --global user.email "ben.hardcastle@alleninstitute.org"
+        git config --global user.name "Ben Hardcastle"
 
     - name: Set up the project
       run: pip install copier==${{ matrix.copier-version }}
