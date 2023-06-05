@@ -13,22 +13,27 @@ _skip_if_exists:
 project_name:
   type: str
   help: Your project name
+  default: np_
 
 project_description:
   type: str
   help: Your project description
+  default: Tools for ... Mindscope Neuropixels experiments.
 
 author_fullname:
   type: str
   help: Your full name
+  default: Ben Hardcastle
 
 author_email:
   type: str
   help: Your email
+  default: ben.hardcastle@alleninstitute.org
 
 author_username:
   type: str
   help: Your username (e.g. on GitHub)
+  default: bjhardcastle
 
 repository_provider:
   type: str
@@ -45,7 +50,7 @@ repository_namespace:
 repository_name:
   type: str
   help: Your repository name
-  default: "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
+  default: "{{ project_name|lower|replace('_', '_')|replace(' ', '_') }}"
 
 copyright_holder:
   type: str
@@ -65,7 +70,7 @@ copyright_date:
 copyright_license:
   type: str
   help: Your project's license
-  default: ISC License
+  default: MIT License
   choices:
   - Academic Free License v3.0
   - Apache License 2.0
@@ -114,9 +119,4 @@ python_package_import_name:
 python_package_command_line_name:
   type: str
   help: Your CLI name if any (for use in the shell)
-  default: "{{ project_name|lower|replace('_', '-')|replace(' ', '-') }}"
-
-insiders:
-  type: bool
-  help: Does this project have an Insiders version?
-  default: false
+  default: "{{ project_name|lower|replace('_', '_')|replace(' ', '_') }}"
