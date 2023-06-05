@@ -26,13 +26,13 @@ nav:
     - Installation: insiders/installation.md
     - Changelog: insiders/changelog.md
 {%- endif %}
-{%- if author_username == "bjhardcastle" %}
+{%- if author_username == "pawamoy" %}
 - Author's website: https://{{ author_username }}.{{ repository_provider.rsplit('.', 1)[0] }}.io/
 {%- endif %}
 
 theme:
   name: material
-  {%- if author_username == "bjhardcastle" %}
+  {%- if author_username == "pawamoy" %}
   custom_dir: docs/.overrides
   icon:
     logo: material/currency-sign
@@ -100,7 +100,7 @@ markdown_extensions:
 - pymdownx.tasklist:
     custom_checkbox: true
 - toc:
-    permalink: {% if author_username == "bjhardcastle" %}"¤"{% else %}true{% endif %}
+    permalink: {% if author_username == "pawamoy" %}"¤"{% else %}true{% endif %}
 
 plugins:
 - search
@@ -134,7 +134,7 @@ extra:
   social:
   - icon: fontawesome/brands/{{ repository_provider.rsplit(".", 1)[0] }}
     link: https://{{ repository_provider }}/{{ author_username }}
-  {%- if author_username == "bjhardcastle" %}
+  {%- if author_username == "pawamoy" %}
   - icon: fontawesome/brands/mastodon
     link: https://fosstodon.org/@{{ author_username }}
   - icon: fontawesome/brands/twitter
